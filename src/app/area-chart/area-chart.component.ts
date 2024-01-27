@@ -293,7 +293,7 @@ let formatter = d3.timeParse("%Y-%m-%d")
       .call(d3.axisLeft(y));
       this.svg.append("path")
       .datum(this.apidata)
-      .attr("fill", this.apidata.map((d,index)=>index%2===0?"#cce5df":"#cce5af"))
+      .attr("fill", "#cce5df")
       .attr("stroke", "#69b3a2")
       .attr("stroke-width", 1.5)
       .attr("d", d3.area()
