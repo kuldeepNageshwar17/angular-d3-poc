@@ -1,0 +1,40 @@
+.vertical-line {
+  &:after {
+  }
+}
+
+.vertical-line {
+  position: relative;
+  height: 200px; /* Adjust the height as needed */
+  border-left: 2px solid #000; /* Vertical line */
+}
+
+.marker {
+  position: absolute;
+  top: 50%; /* Adjust the height of the markers */
+  width: 20px; /* Adjust the width of the markers */
+  height: 2px; /* Adjust the height of the markers */
+  background-color: #000;
+}
+
+.marker::before,
+.marker::after {
+  content: "";
+  position: absolute;
+  top: -8px; /* Adjust the offset from the line */
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.marker::before {
+  border-width: 8px 0 8px 8px; /* Greater than marker on the left */
+  border-color: transparent transparent transparent #000;
+  left: -10px; /* Adjust the position of the marker */
+}
+
+.marker::after {
+  border-width: 8px 8px 8px 0; /* Less than marker on the right */
+  border-color: transparent #000 transparent transparent;
+  right: -10px; /* Adjust the position of the marker */
+}
